@@ -60,11 +60,25 @@ class HingeData:
                 else:
                     like_no_match += 1
 
+        unmatches = 0
+        for interaction in self.json_dict:
+            if 'like' in interaction:
+                if 'block' in interaction:
+                    unmatches += 1
+
+        declined = 0
+        for interaction in self.json_dict:
+            if 'block' in interaction:
+                if 'match' not in interaction:
+                    declined += 1
+
         like_conversion_rate = matches/(like_no_match+matches)
         print(f"total matches: {matches}")
         print(f"total likes sent without matches: {like_no_match}")
         print(f"total likes sent: {matches+like_no_match}")
         print(f"like conversion rate: {round(like_conversion_rate, 2)}%")
+        print(f"total number of people I have unmatched: {unmatches}")
+        print(f"total number of people I have declined: {declined}")
 
     def get_match_time(self, interaction):
         try:
@@ -98,6 +112,8 @@ class HingeData:
         average_time = datetime.strftime(unix_average_time, "%H:%M:%S")
 
         print(f"average match time for likes sent: {average_time}")
+
+
 
 
 
