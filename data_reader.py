@@ -89,7 +89,7 @@ class HingeData:
         print(f"total matches: {matches}")
         print(f"total likes sent without matches: {like_no_match}")
         print(f"total likes sent: {matches+like_no_match}")
-        print(f"like conversion rate: {round(like_conversion_rate, 2)}%")
+        print(f"like conversion rate: {round(like_conversion_rate * 100, 2)}%")
         print(f"total number of people I have unmatched: {unmatches}")
         print(f"total number of people I have declined: {declined}")
 
