@@ -3,7 +3,7 @@ from data_reader import HingeData
 
 if __name__ == '__main__':
 
-    data_path = '/Users/liamhartley/PycharmProjects/hinge-analysis/export/matches.json'
+    data_path = '/Users/liamhartley/PycharmProjects/hinge-analysis/exports/export_lh/matches.json'
 
     HingeDataObject = HingeData(json_path=data_path, data_type='matches')
     HingeDataObject.average_response_time()
